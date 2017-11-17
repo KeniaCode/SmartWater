@@ -1,0 +1,26 @@
+<resources>
+    <!--
+    TODO: Before you run your application, you need a Google Maps API key.
+
+    To get one, follow this link, follow the directions and press "Create" at the end:
+
+    https://console.developers.google.com/flows/enableapi?apiid=maps_android_backend&keyType=CLIENT_SIDE_ANDROID&r=27:2A:B3:93:F7:3E:CF:1C:6B:35:79:0E:7F:41:8B:3C:DB:C7:B8:F5%3Bcom.app.kenia.smartwater
+
+    You can also add your credentials to an existing key, using these values:
+
+    Package name:
+    27:2A:B3:93:F7:3E:CF:1C:6B:35:79:0E:7F:41:8B:3C:DB:C7:B8:F5
+
+    SHA-1 certificate fingerprint:
+    27:2A:B3:93:F7:3E:CF:1C:6B:35:79:0E:7F:41:8B:3C:DB:C7:B8:F5
+
+    Alternatively, follow the directions here:
+    https://developers.google.com/maps/documentation/android/start#get-key
+
+    Once you have your key (it starts with "AIza"), replace the "google_maps_key"
+    string in this file.
+    -->
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">
+        AIzaSyDtkTnEVcS0GTt4pApLpMjvun7smASXFm8
+    </string>
+</resources>
