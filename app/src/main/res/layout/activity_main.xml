@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    tools:context="com.app.kenia.smartwater.MainActivity"
+    xmlns:CircleProgressView="http://schemas.android.com/apk/res-auto">
+
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh_layout_comentarios"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:weightSum="1">
+
+
+                <me.itangqi.waveloadingview.WaveLoadingView
+                    android:id="@+id/waveLoadingViewAgua"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="24dp"
+                    app:wlv_borderColor="@color/colorAccent"
+                    app:wlv_borderWidth="3dp"
+                    app:wlv_progressValue="40"
+                    app:wlv_round_rectangle="true"
+                    app:wlv_shapeType="circle"
+                    app:wlv_titleCenter="Agua"
+                    app:wlv_titleCenterColor="@color/colorPrimaryDark"
+                    app:wlv_titleCenterSize="24sp"
+                    app:wlv_titleCenterStrokeColor="@color/colorPrimaryDark"
+                    app:wlv_titleCenterStrokeWidth="1dp"
+                    app:wlv_titleTopColor="@color/colorPrimaryDark"
+                    app:wlv_titleTopSize="18sp"
+                    app:wlv_titleTopStrokeColor="@color/colorPrimaryDark"
+                    app:wlv_titleTopStrokeWidth="0dp"
+                    app:wlv_triangle_direction="north"
+                    app:wlv_waveAmplitude="70"
+                    app:wlv_waveColor="@color/colorAccent" />
+
+                <at.grabner.circleprogress.CircleProgressView
+                    android:id="@+id/circleViewTurbidez"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="24dp"
+                    CircleProgressView:cpv_autoTextSize="true"
+                    CircleProgressView:cpv_barColor="@color/colorPrimary"
+                    CircleProgressView:cpv_barWidth="35dp"
+                    CircleProgressView:cpv_innerContourSize="0dp"
+                    CircleProgressView:cpv_maxValue="100"
+                    CircleProgressView:cpv_outerContourSize="0dp"
+                    CircleProgressView:cpv_rimColor="@color/colorAccent"
+                    CircleProgressView:cpv_rimWidth="35dp"
+                    CircleProgressView:cpv_seekMode="false"
+                    CircleProgressView:cpv_showUnit="true"
+                    CircleProgressView:cpv_spinColor="@color/colorPrimary"
+                    CircleProgressView:cpv_textColor="@color/colorPrimaryDark"
+                    CircleProgressView:cpv_textScale="1"
+                    CircleProgressView:cpv_unit="%"
+                    CircleProgressView:cpv_unitColor="@color/colorAccent"
+                    CircleProgressView:cpv_unitPosition="right_top"
+                    CircleProgressView:cpv_unitScale="1"
+                    CircleProgressView:cpv_value="10" />
+
+                <at.grabner.circleprogress.CircleProgressView
+                    android:id="@+id/circleViewTemp"
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_margin="24dp"
+                    CircleProgressView:cpv_autoTextSize="true"
+                    CircleProgressView:cpv_barColor="@color/colorPrimary"
+                    CircleProgressView:cpv_barWidth="35dp"
+                    CircleProgressView:cpv_innerContourSize="0dp"
+                    CircleProgressView:cpv_maxValue="100"
+                    CircleProgressView:cpv_outerContourSize="0dp"
+                    CircleProgressView:cpv_rimColor="@color/colorAccent"
+                    CircleProgressView:cpv_rimWidth="35dp"
+                    CircleProgressView:cpv_seekMode="false"
+                    CircleProgressView:cpv_showUnit="true"
+                    CircleProgressView:cpv_spinColor="@color/colorPrimary"
+                    CircleProgressView:cpv_textColor="@color/colorPrimaryDark"
+                    CircleProgressView:cpv_textScale="1"
+                    CircleProgressView:cpv_unit="ºC"
+                    CircleProgressView:cpv_unitColor="@color/colorAccent"
+                    CircleProgressView:cpv_unitPosition="right_top"
+                    CircleProgressView:cpv_unitScale="1"
+                    CircleProgressView:cpv_value="10" />
+
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+</LinearLayout>
+
