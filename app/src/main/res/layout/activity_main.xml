@@ -51,6 +51,18 @@
                     app:wlv_waveAmplitude="70"
                     app:wlv_waveColor="@color/colorAccent" />
 
+                <TextView
+                    android:id="@+id/textView_turb"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="12dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="4dp"
+                    android:gravity="center_horizontal"
+                    android:text="Turbidez"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
+
                 <at.grabner.circleprogress.CircleProgressView
                     android:id="@+id/circleViewTurbidez"
                     android:layout_width="match_parent"
@@ -75,6 +87,18 @@
                     CircleProgressView:cpv_unitPosition="right_top"
                     CircleProgressView:cpv_unitScale="1"
                     CircleProgressView:cpv_value="10" />
+
+                <TextView
+                    android:id="@+id/textView_temp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="4dp"
+                    android:layout_marginLeft="24dp"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center_horizontal"
+                    android:text="Temperatura"
+                    android:textColor="@color/colorPrimaryDark"
+                    android:textSize="16sp" />
 
                 <at.grabner.circleprogress.CircleProgressView
                     android:id="@+id/circleViewTemp"
