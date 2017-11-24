@@ -10,10 +10,6 @@
     tools:context="com.app.kenia.smartwater.MainActivity">
 
 
-    <android.support.v4.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh_layout_comentarios"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
 
         <ScrollView
             android:layout_width="match_parent"
@@ -70,20 +66,20 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="24dp"
                     CircleProgressView:cpv_autoTextSize="true"
-                    CircleProgressView:cpv_barColor="@color/colorPrimary"
+                    CircleProgressView:cpv_barColor="@color/green_300"
                     CircleProgressView:cpv_barWidth="35dp"
                     CircleProgressView:cpv_innerContourSize="0dp"
                     CircleProgressView:cpv_maxValue="100"
                     CircleProgressView:cpv_outerContourSize="0dp"
-                    CircleProgressView:cpv_rimColor="@color/colorAccent"
+                    CircleProgressView:cpv_rimColor="@color/green_200"
                     CircleProgressView:cpv_rimWidth="35dp"
                     CircleProgressView:cpv_seekMode="false"
                     CircleProgressView:cpv_showUnit="true"
-                    CircleProgressView:cpv_spinColor="@color/colorPrimary"
-                    CircleProgressView:cpv_textColor="@color/colorPrimaryDark"
+                    CircleProgressView:cpv_spinColor="@color/green_300"
+                    CircleProgressView:cpv_textColor="@color/green_500"
                     CircleProgressView:cpv_textScale="1"
                     CircleProgressView:cpv_unit="%"
-                    CircleProgressView:cpv_unitColor="@color/colorAccent"
+                    CircleProgressView:cpv_unitColor="@color/green_200"
                     CircleProgressView:cpv_unitPosition="right_top"
                     CircleProgressView:cpv_unitScale="1"
                     CircleProgressView:cpv_value="10" />
@@ -107,20 +103,20 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_margin="24dp"
                     CircleProgressView:cpv_autoTextSize="true"
-                    CircleProgressView:cpv_barColor="@color/colorPrimary"
+                    CircleProgressView:cpv_barColor="@color/orange_300"
                     CircleProgressView:cpv_barWidth="35dp"
                     CircleProgressView:cpv_innerContourSize="0dp"
                     CircleProgressView:cpv_maxValue="100"
                     CircleProgressView:cpv_outerContourSize="0dp"
-                    CircleProgressView:cpv_rimColor="@color/colorAccent"
+                    CircleProgressView:cpv_rimColor="@color/orange_200"
                     CircleProgressView:cpv_rimWidth="35dp"
                     CircleProgressView:cpv_seekMode="false"
                     CircleProgressView:cpv_showUnit="true"
-                    CircleProgressView:cpv_spinColor="@color/colorPrimary"
-                    CircleProgressView:cpv_textColor="@color/colorPrimaryDark"
+                    CircleProgressView:cpv_spinColor="@color/orange_300"
+                    CircleProgressView:cpv_textColor="@color/orange_500"
                     CircleProgressView:cpv_textScale="1"
                     CircleProgressView:cpv_unit="ºC"
-                    CircleProgressView:cpv_unitColor="@color/colorAccent"
+                    CircleProgressView:cpv_unitColor="@color/orange_200"
                     CircleProgressView:cpv_unitPosition="right_top"
                     CircleProgressView:cpv_unitScale="1"
                     CircleProgressView:cpv_value="10" />
@@ -147,7 +143,6 @@
 
         </ScrollView>
 
-    </android.support.v4.widget.SwipeRefreshLayout>
 
 
 </LinearLayout>

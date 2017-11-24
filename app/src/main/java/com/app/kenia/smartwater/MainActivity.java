@@ -69,7 +69,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     WaveLoadingView mWaveLoadingView;
     CircleProgressView circleProgressViewTemp;
     CircleProgressView circleProgressViewTurbidez;
-    int consumoAgua = 5;
+    int consumoAgua = 1;
     float temperatura = (float) 17.5;
     float turbidez = (float) 25.8;
     SupportMapFragment sMapFragment;
@@ -82,7 +82,7 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        getPermission(ACCESS_FINE_LOCATION, REQUEST_CODE_ASK_LOCATION);
 
         sMapFragment = SupportMapFragment.newInstance();
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager().findFragmentById(R.id.map2);
@@ -139,7 +139,12 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
             }
         };
 
-        timer.schedule(task, 0, 100000); //actualiza datos cada 10 segundos
+        timer.schedule(task, 0, 15000); //actualiza datos cada 10 segundos
+        Intent serviceIntent = new Intent(getApplicationContext(), LocationServices.class);
+        getApplicationContext().startService(serviceIntent);
+        BluetoothServices.mainActivity = this;
+        Intent bluetoothIntent = new Intent(getApplicationContext(), BluetoothServices.class);
+        getApplicationContext().startService(bluetoothIntent);
     }
 
     /**
@@ -151,17 +156,13 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
         new sendPostTemperatura().execute("", "");
         new sendPostTurbidez().execute("", "");
         new sendPostUbicacion().execute("", "");
-
-        mWaveLoadingView.setTopTitle(Integer.toString(consumoAgua)+" ml");
-        mWaveLoadingView.setProgressValue(consumoAgua);
-        circleProgressViewTemp.setValue(temperatura);
-        circleProgressViewTurbidez.setValue(turbidez);
         Toast.makeText(getApplication(), "Datos Actualizados", Toast.LENGTH_SHORT).show();
     }
 
     @Override
     public void onRefresh() {
         actualizarDatos();
+
     }
 
     public void getPermission(String PERMISSION, int REQUEST_CODE) {
@@ -420,6 +421,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private class sendPostConsumo extends AsyncTask<String, Integer, String> {
         protected void onPostExecute(String result) {
             //	pb.setVisibility(View.GONE);
+            mWaveLoadingView.setTopTitle(Integer.toString(consumoAgua) + " ml");
+            mWaveLoadingView.setProgressValue(consumoAgua);
             super.onPostExecute(result);
         }
 
@@ -474,6 +477,9 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
 
                 if (result) {
                     consumoAgua = Integer.valueOf(consumo);
+                    if (consumoAgua == 2500) {
+                        Toast.makeText(getApplication(), "Felicidades Meta del dia lograda!!!", Toast.LENGTH_SHORT).show();
+                    }
                 } else {
 
                 }
@@ -488,12 +494,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 }
             }
             return null;
+
         }
+
+
     }
 
     private class sendPostTurbidez extends AsyncTask<String, Integer, String> {
         protected void onPostExecute(String result) {
             //	pb.setVisibility(View.GONE);
+            circleProgressViewTurbidez.setValue(turbidez);
             super.onPostExecute(result);
         }
 
@@ -544,10 +554,16 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
                 JSONObject JSON = null;
                 JSON = new JSONObject(response.toString());
                 Boolean result = JSON.getBoolean("result");
-                String turb = JSON.getString("trubidez");
+                String turb = JSON.getString("turbidez");
 
                 if (result) {
+
                     turbidez = Float.valueOf(turb);
+                    if (turbidez == 400) {
+                        turbidez = 100;
+                    } else {
+                        turbidez = (turbidez * 100) / 400;
+                    }
                 } else {
 
                 }
@@ -568,6 +584,8 @@ public class MainActivity extends AppCompatActivity implements OnMapReadyCallbac
     private class sendPostTemperatura extends AsyncTask<String, Integer, String> {
         protected void onPostExecute(String result) {
             //	pb.setVisibility(View.GONE);
+
+            circleProgressViewTemp.setValue(temperatura);
             super.onPostExecute(result);
         }
 
